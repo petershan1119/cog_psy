@@ -1,4 +1,28 @@
-social_feedback <- hBayesDM_model(
+#' @templateVar MODEL_FUNCTION sf_reinforce
+#' @templateVar CONTRIBUTOR {Sang Won Han}
+#' @templateVar TASK_NAME Social Feedback Task
+#' @templateVar TASK_CITE (Yoon et al., 2018)
+#' @templateVar MODEL_NAME Social Feedback Reinforcement Model
+#' @templateVar MODEL_TYPE Hierarchical
+#' @templateVar DATA_COLUMNS "subjID", "Decision", "OC", "reFeedback"
+#' @templateVar PARAMETERS "alpha", "beta_vsp", "beta_oc", "beta_0"
+#' @templateVar LENGTH_DATA_COLUMNS 4
+#' @templateVar DETAILS_DATA_1 \item{"subjID"}{A unique identifier for each subject in the data-set.}
+#' @templateVar DETAILS_DATA_2 \item{"Decision"}{Which option was chosen?}
+#' @templateVar DETAILS_DATA_3 \item{"OC"}{Outcome.}
+#' @templateVar DETAILS_DATA_4 \item{"reFeedback"}{Reverse-coded Feedback.}
+#'
+#' @template model-documentation
+#'
+#' @export
+#' @include hBayesDM_model.R
+#'
+#' @references
+#' Yoon, L., Somerville, L. H., & Kim H. (2018). Development of MPFC function
+#'   mediates shifts in self-protective behavior provoked by social feedback.
+#'   Nature Neuroscience, 9(1), 1-10.
+
+sf_reinforce <- hBayesDM_model(
   task_name       = "sf",
   model_name      = "reinforce",
   data_columns    = c("subjID", "Decision", "OC", "reFeedback"),
